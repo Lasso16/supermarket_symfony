@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Área Privada{% endblock %}
+
+{% block principal %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Bienvenido, {{ app.user.nombreUsuario }}!</h3>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Esta es tu zona privada.</p>
+                    <hr>
+                    <p>Aquí podrás ver tus pedidos, editar tu perfil y más.</p>
+                    <a href="{{ path('app_logout') }}" class="btn btn-outline-danger">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

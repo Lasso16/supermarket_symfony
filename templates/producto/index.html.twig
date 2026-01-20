@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos - Organic{% endblock %}
+
+{% block body %}
+<section class="py-5">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+                    <h2 class="section-title">Todos los Productos</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                    {% for producto in productos %}
+                    <div class="col">
+                        {% include 'parts/product_card.part.html.twig' with {
+                            'product': {
+                                'name': producto.titulo,
+                                'image': asset('images/' ~ producto.imagen),
+                                'rating': 4,
+                                'reviews': 10,
+                                'price': producto.precio,
+                                'discount': 0
+                            }
+                        } %}
+                    </div>
+                    {% else %}
+                        <div class="col-12">
+                            <p>No se encontraron productos.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

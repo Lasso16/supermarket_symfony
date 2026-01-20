@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacto - Organic{% endblock %}
+
+{% block body %}
+{# Hero Section #}
+<section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+  <div class="container-lg text-center text-white py-5">
+    <span class="badge bg-white text-primary px-3 py-2 mb-3">Contáctanos</span>
+    <h1 class="display-4 fw-bold mb-4">Estamos aquí para ayudarte</h1>
+    <p class="lead opacity-75">¿Tienes alguna pregunta? Nos encantaría saber de ti.</p>
+  </div>
+</section>
+
+{# Contact Cards #}
+<section class="py-5" style="margin-top: -60px;">
+  <div class="container-lg">
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-lg text-center p-4">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary text-white mx-auto mb-4" style="width: 70px; height: 70px;">
+            <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          </div>
+          <h4 class="fw-bold mb-3">Ubicación</h4>
+          <p class="text-muted mb-0">Calle Ejemplo 123<br>28001 Madrid, España</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-lg text-center p-4">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-success text-white mx-auto mb-4" style="width: 70px; height: 70px;">
+            <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+          </div>
+          <h4 class="fw-bold mb-3">Teléfono</h4>
+          <p class="text-muted mb-0">+34 912 345 678<br>Lun - Vie: 9:00 - 18:00</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-lg text-center p-4">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-warning text-white mx-auto mb-4" style="width: 70px; height: 70px;">
+            <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Z"/></svg>
+          </div>
+          <h4 class="fw-bold mb-3">Email</h4>
+          <p class="text-muted mb-0">info@organic.es<br>soporte@organic.es</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Contact Form #}
+<section class="py-5 bg-light">
+  <div class="container-lg">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm p-4">
+          <h3 class="fw-bold mb-4">Envíanos un mensaje</h3>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control form-control-lg" placeholder="Tu nombre" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control form-control-lg" placeholder="tu@email.com" required>
+              </div>
+              <div class="col-12">
+                <select class="form-select form-select-lg" required>
+                  <option value="">Selecciona asunto</option>
+                  <option>Consulta general</option>
+                  <option>Sobre un pedido</option>
+                  <option>Devolución</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control form-control-lg" rows="5" placeholder="Tu mensaje..." required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill">Enviar Mensaje</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm overflow-hidden h-100">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.6!2d-3.7!3d40.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDI0JzAwLjAiTiAzwrA0MicwMC4wIlc!5e0!3m2!1ses!2ses" style="border:0; width:100%; min-height:450px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Team Quick Contact #}
+<section class="py-5">
+  <div class="container-lg text-center">
+    <h3 class="fw-bold mb-4">Nuestro equipo está aquí para ti</h3>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="{{ asset('images/reviewer-1.jpg') }}" alt="Carlos" class="rounded-circle mb-3 shadow" style="width: 100px; height: 100px; object-fit: cover;">
+        <h6 class="fw-bold mb-1">Carlos</h6>
+        <p class="text-muted small">Atención al Cliente</p>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="{{ asset('images/reviewer-2.jpg') }}" alt="María" class="rounded-circle mb-3 shadow" style="width: 100px; height: 100px; object-fit: cover;">
+        <h6 class="fw-bold mb-1">María</h6>
+        <p class="text-muted small">Soporte Técnico</p>
+      </div>
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="{{ asset('images/reviewer-3.jpg') }}" alt="Laura" class="rounded-circle mb-3 shadow" style="width: 100px; height: 100px; object-fit: cover;">
+        <h6 class="fw-bold mb-1">Laura</h6>
+        <p class="text-muted small">Ventas</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

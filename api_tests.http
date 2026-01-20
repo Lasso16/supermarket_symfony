@@ -1,0 +1,68 @@
+# CONFIGURACIÓN DE URL BASE
+# Asegúrate de que XAMPP Apache está corriendo (puerto 80 por defecto se asume)
+@baseUrl = http://localhost/proyectoFinal_ERIC_LASSO/sym.final/public
+
+### 0. Prueba de diagnóstico (Archivo estático)
+# Si esto falla con 404, tu servidor web no está apuntando a la carpeta correcta o la URL está mal.
+GET http://localhost/proyectoFinal_ERIC_LASSO/sym.final/public/test_ping.txt
+
+### 1. Prueba de conexión (Ping)
+GET {{baseUrl}}/api/v1/prueba
+
+### 2. Crear un nuevo producto (POST)
+POST {{baseUrl}}/api/v1/producto
+Content-Type: application/json
+
+{
+    "titulo": "Producto de Prueba API",
+    "descripcion": "Descripción del producto creado desde la API",
+    "precio": 99.99,
+    "usuario_id": 1,
+    "categoria_id": 1,
+    "fecha_inicial": "2026-01-20",
+    "fecha_final": "2026-02-20"
+}
+
+### 3. Crear producto con error de validación (Falta título)
+POST {{baseUrl}}/api/v1/producto
+Content-Type: application/json
+
+{
+    "precio": 50.00,
+    "usuario_id": 1
+}
+
+### 4. Listar todos los productos (GET)
+GET {{baseUrl}}/api/v1/productos
+
+### 5. Filtrar productos (GET con parámetros)
+GET {{baseUrl}}/api/v1/productos?q=Prueba&categoria=1
+
+### 6. Obtener un producto específico (GET ID)
+# Reemplaza el ID '1' con un ID real que exista
+GET {{baseUrl}}/api/v1/producto/1
+
+### 7. Actualizar producto (PUT)
+# Reemplaza el ID '1' con un ID real
+PUT {{baseUrl}}/api/v1/producto/1
+Content-Type: application/json
+
+{
+    "titulo": "Producto Actualizado API",
+    "precio": 150.00
+}
+
+### 8. Eliminar producto (DELETE)
+# Reemplaza el ID '1' con el ID del producto creado anteriormente
+DELETE {{baseUrl}}/api/v1/producto/1
+
+### 9. Registrar Usuario Nuevo (Auth)
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "api_user_v2",
+    "email": "user_v2@example.com",
+    "password": "passwordSecure"
+}

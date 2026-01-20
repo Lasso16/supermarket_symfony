@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro
+{% endblock %}
+
+{% block body %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+
+	<style>
+		.invalid-feedback,
+		ul li {
+			color: #dc3545;
+		}
+	</style>
+
+	<div class="container mt-5">
+		<h1 class="h3 mb-3 font-weight-normal text-center">Registro</h1>
+
+		{# Resumen detallado de errores de validación #}
+		{% if registrationForm.vars.submitted and not registrationForm.vars.valid %}
+			<div class="alert alert-danger" role="alert">
+				<h5 class="alert-heading">
+					<i class="bi bi-exclamation-triangle-fill me-2"></i>Por favor, revisa los siguientes errores:</h5>
+				<hr>
+				<ul
+					class="mb-0">
+					{# Errores globales del formulario #}
+					{% for error in registrationForm.vars.errors %}
+						<li>{{ error.message }}</li>
+					{% endfor %}
+					{# Errores de cada campo #}
+					{% for child in registrationForm.children %}
+						{% for error in child.vars.errors %}
+							<li>
+								<strong>{{ child.vars.label|default(child.vars.name|capitalize) }}:</strong>
+								{{ error.message }}</li>
+						{% endfor %}
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+
+		{{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+		<div class="mb-3">
+			{{ form_row(registrationForm.nombreUsuario) }}
+		</div>
+		<div class="mb-3">
+			{{ form_row(registrationForm.email) }}
+		</div>
+		<div class="mb-3">
+			{{ form_row(registrationForm.plainPassword, {
+                    label: 'Contraseña'
+                }) }}
+		</div>
+
+		<div class="mb-3">
+			<label>Verificación</label>
+			<div class="d-flex align-items-center gap-3">
+				<img src="{{ path('app_captcha') }}" alt="Captcha" class="border rounded">
+				{{ form_widget(registrationForm.captcha, {'attr': {'placeholder': 'Introduce el código', 'class': 'form-control'}}) }}
+			</div>
+			{{ form_errors(registrationForm.captcha) }}
+		</div>
+
+		<button type="submit" class="btn btn-lg btn-primary w-100">Registrarse</button>
+		{{ form_end(registrationForm) }}
+	</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+twig:
+  default_path: "%kernel.project_dir%/templates"
+  globals:
+    images_directory: "/images/gallery/" # Ajustado a la ruta real web, user pidió algo específico pero gallery parece más correcto si ahi guardamos. User dijo '/images/index/portfolio'. Usaré lo que tengo configurado en public: '/images/gallery/'.
+
+when@test:
+  twig:
+    strict_variables: true

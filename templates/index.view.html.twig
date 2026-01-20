@@ -1,0 +1,360 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Organic - Productos Ecológicos a Domicilio
+{% endblock %}
+
+{% block body %}
+
+	{# Hero Banner Section #}
+	<section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
+		<div class="container-lg">
+			<div class="row">
+				<div class="col-lg-6 pt-5 mt-5">
+					<h2 class="display-1 ls-1">
+						<span class="fw-bold text-primary">Productos Orgánicos</span>
+						a tu
+						<span class="fw-bold">Puerta</span>
+					</h2>
+					<p class="fs-4">Alimentación saludable y sostenible.</p>
+					<div class="d-flex gap-3">
+						<a href="#" class="btn btn-primary text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Compr ahora</a>
+						<a href="#" class="btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3">Únete</a>
+					</div>
+					<div class="row my-5">
+						<div class="col">
+							<div class="row text-dark">
+								<div class="col-auto">
+									<p class="fs-1 fw-bold lh-sm mb-0">14k+</p>
+								</div>
+								<div class="col">
+									<p class="text-uppercase lh-sm mb-0">Variedades de Productos</p>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row text-dark">
+								<div class="col-auto">
+									<p class="fs-1 fw-bold lh-sm mb-0">50k+</p>
+								</div>
+								<div class="col">
+									<p class="text-uppercase lh-sm mb-0">Clientes Felices</p>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row text-dark">
+								<div class="col-auto">
+									<p class="fs-1 fw-bold lh-sm mb-0">10+</p>
+								</div>
+								<div class="col">
+									<p class="text-uppercase lh-sm mb-0">Ubicaciones</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{# Features Cards #}
+			<div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 g-0 justify-content-center">
+				<div class="col">
+					<div class="card border-0 bg-primary rounded-0 p-4 text-light">
+						<div class="row">
+							<div class="col-md-3 text-center">
+								<svg width="60" height="60">
+									<use xlink:href="#fresh"></use>
+								</svg>
+							</div>
+							<div class="col-md-9">
+								<div class="card-body p-0">
+									<h5 class="text-light">Fresco de la granja</h5>
+									<p class="card-text">Productos directos del campo.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card border-0 bg-secondary rounded-0 p-4 text-light">
+						<div class="row">
+							<div class="col-md-3 text-center">
+								<svg width="60" height="60">
+									<use xlink:href="#organic"></use>
+								</svg>
+							</div>
+							<div class="col-md-9">
+								<div class="card-body p-0">
+									<h5 class="text-light">100% Orgánico</h5>
+									<p class="card-text">Certificados ecológicos.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card border-0 bg-danger rounded-0 p-4 text-light">
+						<div class="row">
+							<div class="col-md-3 text-center">
+								<svg width="60" height="60">
+									<use xlink:href="#delivery"></use>
+								</svg>
+							</div>
+							<div class="col-md-9">
+								<div class="card-body p-0">
+									<h5 class="text-light">Envío gratis</h5>
+									<p class="card-text">A partir de 50€.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	{# Category Carousel #}
+	<section class="py-5 overflow-hidden">
+		<div class="container-lg">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header d-flex flex-wrap justify-content-between mb-5">
+						<h2 class="section-title">Categorías</h2>
+						<div class="d-flex align-items-center">
+							<a href="{{ path('app_categoria') }}" class="btn btn-primary me-2">Ver Todas</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="category-carousel swiper">
+						<div class="swiper-wrapper">
+							{% for categoria in categorias %}
+								<a href="#" class="nav-link swiper-slide text-center">
+									<img src="{{ asset('images/' ~ (categoria.imagen|default('category-thumb-1.jpg'))) }}" class="rounded-circle" alt="{{ categoria.nombre }}">
+									<h4 class="fs-6 mt-3 fw-normal category-title">{{ categoria.nombre }}</h4>
+								</a>
+							{% else %}
+								<p>No hay categorías disponibles.</p>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Best Selling Products #}
+	<section class="pb-5">
+		<div class="container-lg">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header d-flex flex-wrap justify-content-between my-4">
+						<h2 class="section-title">Productos Más Vendidos</h2>
+						<div class="d-flex align-items-center">
+							<a href="{{ path('app_producto') }}" class="btn btn-primary rounded-1">Ver Todos</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-md-12">
+					<form class="row g-3 bg-light p-3 rounded" method="get">
+						<div class="col-md-3">
+							<input type="text" class="form-control" name="search" placeholder="Buscar..." value="{{ filters.search|default('') }}">
+						</div>
+						<div class="col-md-3">
+							<select class="form-select" name="categoria">
+								<option value="">Todas las Categorías</option>
+								{% for cat in categorias %}
+									<option value="{{ cat.id }}" {{ filters.categoria|default('') == cat.id ? 'selected' : '' }}>{{ cat.nombre }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="col-md-2">
+							<input type="date" class="form-control" name="fecha_desde" placeholder="Desde" value="{{ filters.fecha_desde|default('') }}">
+						</div>
+						<div class="col-md-2">
+							<input type="date" class="form-control" name="fecha_hasta" placeholder="Hasta" value="{{ filters.fecha_hasta|default('') }}">
+						</div>
+						<div class="col-md-2 d-grid">
+							<button type="submit" class="btn btn-primary">Filtrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+						{% for producto in productos %}
+							<div class="col">
+								<div class="card h-100 border-0 shadow-sm">
+										<img src="{{ asset(images_directory ~ producto.imagen) }}" class="card-img-top" alt="{{ producto.titulo }}" style="height: 200px; object-fit: cover;">
+									<div class="card-body">
+										<h5 class="card-title">{{ producto.titulo }}</h5>
+										<p class="card-text text-primary fw-bold">{{ producto.precio|number_format(2, ',', '.') }}
+											€</p>
+										<p class="small text-muted mb-1 d-flex align-items-center gap-1">
+									{% if producto.usuario.avatar %}
+										<img src="{{ asset('images/' ~ producto.usuario.avatar) }}" alt="{{ producto.usuario.nombreUsuario }}" class="rounded-circle" style="width: 20px; height: 20px; object-fit: cover;">
+									{% endif %}
+									Por: {{ producto.usuario.nombreUsuario|default('Anónimo') }}
+								</p>
+										<p class="small text-muted">
+											{% if producto.fechaInicial and producto.fechaFinal %}
+												Del
+												{{ producto.fechaInicial|date('d/m/Y') }}
+												al
+												{{ producto.fechaFinal|date('d/m/Y') }}
+											{% elseif producto.fechaInicial %}
+												Desde
+												{{ producto.fechaInicial|date('d/m/Y') }}
+											{% elseif producto.fechaFinal %}
+												Hasta
+												{{ producto.fechaFinal|date('d/m/Y') }}
+											{% else %}
+												Sin fecha definida
+											{% endif %}
+										</p>
+
+										{% if app.user and (producto.usuario == app.user or is_granted('ROLE_ADMIN')) %}
+											<div class="mt-2">
+												<span class="badge bg-warning text-dark">Propio</span>
+												<a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+											</div>
+										{% endif %}
+									</div>
+									<div class="card-footer bg-transparent border-0">
+										<div class="d-flex gap-1">
+											<a href="{{ path('app_producto_show', {'id': producto.id}) }}" class="btn btn-primary btn-sm flex-grow-1">Ver Detalles</a>
+											{% if app.user %}
+												<a href="{{ path('app_carrito_add', {'id': producto.id}) }}" class="btn btn-success btn-sm" title="Añadir al carrito">
+													<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewbox="0 0 16 16">
+														<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+														<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5z"/>
+													</svg>
+												</a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+						{% else %}
+							<p>No hay productos disponibles.</p>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Newsletter Section #}
+	<section>
+		<div class="container-lg">
+			<div class="bg-secondary text-light py-5 my-5" style="background: url('images/banner-newsletter.jpg') no-repeat; background-size: cover;">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-5 p-3">
+							<div class="section-header">
+								<h2 class="section-title display-5 text-light">Consigue un 25% de descuento en tu primera compra</h2>
+							</div>
+							<p>Regístrate ahora y disfruta de nuestras ofertas.</p>
+						</div>
+						<div class="col-md-5 p-3">
+							<form>
+								<div class="mb-3">
+									<label for="name" class="form-label d-none">Nombre</label>
+									<input type="text" class="form-control form-control-md rounded-0" name="name" id="name" placeholder="Nombre">
+								</div>
+								<div class="mb-3">
+									<label for="email" class="form-label d-none">Email</label>
+									<input type="email" class="form-control form-control-md rounded-0" name="email" id="email" placeholder="Email">
+								</div>
+								<div class="d-grid gap-2">
+									<button type="submit" class="btn btn-dark btn-md rounded-0">Regístrate</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# Service Features #}
+	<section class="py-5">
+		<div class="container-lg">
+			<div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
+				<div class="col">
+					<div class="card mb-3 border border-dark-subtle p-3">
+						<div class="text-dark mb-3">
+							<svg width="32" height="32">
+								<use xlink:href="#package"></use>
+							</svg>
+						</div>
+						<div class="card-body p-0">
+							<h5>Envío gratis</h5>
+							<p class="card-text">En pedidos superiores a 50€.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card mb-3 border border-dark-subtle p-3">
+						<div class="text-dark mb-3">
+							<svg width="32" height="32">
+								<use xlink:href="#secure"></use>
+							</svg>
+						</div>
+						<div class="card-body p-0">
+							<h5>Pago 100% seguro</h5>
+							<p class="card-text">Todos los pagos protegidos.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card mb-3 border border-dark-subtle p-3">
+						<div class="text-dark mb-3">
+							<svg width="32" height="32">
+								<use xlink:href="#quality"></use>
+							</svg>
+						</div>
+						<div class="card-body p-0">
+							<h5>Garantía de calidad</h5>
+							<p class="card-text">Productos certificados.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card mb-3 border border-dark-subtle p-3">
+						<div class="text-dark mb-3">
+							<svg width="32" height="32">
+								<use xlink:href="#savings"></use>
+							</svg>
+						</div>
+						<div class="card-body p-0">
+							<h5>Ahorros garantizados</h5>
+							<p class="card-text">Los mejores precios.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card mb-3 border border-dark-subtle p-3">
+						<div class="text-dark mb-3">
+							<svg width="32" height="32">
+								<use xlink:href="#offers"></use>
+							</svg>
+						</div>
+						<div class="card-body p-0">
+							<h5>Ofertas diarias</h5>
+							<p class="card-text">Nuevas ofertas cada día.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog - Organic{% endblock %}
+
+{% block body %}
+{# Hero Section #}
+<section class="py-5" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+  <div class="container-lg text-center text-white py-5">
+    <span class="badge bg-white text-success px-3 py-2 mb-3">Nuestro Blog</span>
+    <h1 class="display-4 fw-bold mb-4">Vida Orgánica</h1>
+    <p class="lead opacity-75">Consejos, recetas y todo sobre alimentación saludable</p>
+  </div>
+</section>
+
+{# Featured Post #}
+<section class="py-5">
+  <div class="container-lg">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="{{ asset('images/banner-1.jpg') }}" alt="Articulo destacado" class="img-fluid rounded-4 shadow-lg">
+      </div>
+      <div class="col-lg-6">
+        <span class="badge bg-primary px-3 py-2 mb-3">Destacado</span>
+        <h2 class="display-6 fw-bold mb-3">10 Beneficios de Consumir Productos Orgánicos</h2>
+        <p class="text-muted mb-4">Descubre por qué cada vez más personas eligen productos orgánicos para su alimentación diaria y cómo puede mejorar tu salud.</p>
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <img src="{{ asset('images/reviewer-1.jpg') }}" alt="Carlos" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+          <div>
+            <p class="mb-0 fw-semibold">Carlos Rodríguez</p>
+            <small class="text-muted">15 Enero 2026 · 8 min lectura</small>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary rounded-pill px-4">Leer más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Blog Posts Grid #}
+<section class="py-5 bg-light">
+  <div class="container-lg">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Últimos Artículos</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100 overflow-hidden">
+          <img src="{{ asset('images/banner-newsletter.jpg') }}" alt="Recetas" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="badge bg-success mb-2">Recetas</span>
+            <h5 class="fw-bold">5 Recetas Veganas con Ingredientes Orgánicos</h5>
+            <p class="text-muted small">Platos deliciosos y nutritivos para toda la familia.</p>
+            <div class="d-flex align-items-center gap-2 mt-3">
+              <img src="{{ asset('images/reviewer-2.jpg') }}" alt="María" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;">
+              <small class="text-muted">María · 12 Enero</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100 overflow-hidden">
+          <img src="{{ asset('images/banner-1.jpg') }}" alt="Salud" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Salud</span>
+            <h5 class="fw-bold">Cómo los Pesticidas Afectan tu Salud</h5>
+            <p class="text-muted small">La importancia de elegir alimentos sin químicos.</p>
+            <div class="d-flex align-items-center gap-2 mt-3">
+              <img src="{{ asset('images/reviewer-3.jpg') }}" alt="Laura" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;">
+              <small class="text-muted">Laura · 10 Enero</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100 overflow-hidden">
+          <img src="{{ asset('images/banner-newsletter.jpg') }}" alt="Consejos" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">Consejos</span>
+            <h5 class="fw-bold">Guía para Empezar un Huerto en Casa</h5>
+            <p class="text-muted small">Cultiva tus propias verduras orgánicas fácilmente.</p>
+            <div class="d-flex align-items-center gap-2 mt-3">
+              <img src="{{ asset('images/reviewer-1.jpg') }}" alt="María" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;">
+              <small class="text-muted">María · 8 Enero</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Authors Section #}
+<section class="py-5">
+  <div class="container-lg">
+    <div class="text-center mb-5">
+      <h3 class="fw-bold">Nuestros Escritores</h3>
+      <p class="text-muted">Expertos en nutrición y vida saludable</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-3 col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4">
+          <img src="{{ asset('images/reviewer-1.jpg') }}" alt="Carlos" class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Carlos Rodriguez</h5>
+          <p class="text-primary small mb-2">Nutricionista</p>
+          <p class="text-muted small">15 artículos</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4">
+          <img src="{{ asset('images/reviewer-2.jpg') }}" alt="María" class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">María García</h5>
+          <p class="text-primary small mb-2">Chef Orgánico</p>
+          <p class="text-muted small">12 artículos</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4">
+          <img src="{{ asset('images/reviewer-3.jpg') }}" alt="Laura" class="rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Laura Martínez</h5>
+          <p class="text-primary small mb-2">Ecologista</p>
+          <p class="text-muted small">9 artículos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Newsletter CTA #}
+<section class="py-5 bg-primary text-white">
+  <div class="container-lg text-center">
+    <h3 class="fw-bold mb-3">¿Quieres recibir nuestros artículos?</h3>
+    <p class="opacity-75 mb-4">Suscríbete a nuestra newsletter y no te pierdas nada</p>
+    <form class="row g-2 justify-content-center">
+      <div class="col-md-4">
+        <input type="email" class="form-control form-control-lg" placeholder="Tu email">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-dark btn-lg">Suscribirse</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorías - Organic{% endblock %}
+
+{% block body %}
+<section class="py-5">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+                    <h2 class="section-title">Todas las Categorías</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4 center-content">
+            {% for categoria in categorias %}
+            <div class="col text-center">
+                <div class="card h-100 border-0">
+                    <img src="{{ asset('images/' ~ (categoria.imagen|default('category-thumb-1.jpg'))) }}" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;" alt="{{ categoria.nombre }}">
+                    <div class="card-body">
+                        <h4 class="fs-6 mt-3 fw-normal category-title">{{ categoria.nombre }}</h4>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <div class="col-12">
+                    <p>No se encontraron categorías.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

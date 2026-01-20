@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Producto Admin{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Producto Admin</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th>Categoria</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.titulo }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>
+                        {% if producto.imagen %}
+                            <img src="{{ asset('images/gallery/' ~ producto.imagen) }}" style="width: 50px; height: 50px; object-fit: cover;">
+                        {% endif %}
+                    </td>
+                    <td>{{ producto.categoria }}</td>
+                    <td>
+                        <a href="{{ path('app_admin_producto_show', {'id': producto.id}) }}" class="btn btn-sm btn-info">Show</a>
+                        <a href="{{ path('app_admin_producto_edit', {'id': producto.id}) }}" class="btn btn-sm btn-warning">Edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_admin_producto_new') }}" class="btn btn-success">Create new</a>
+    </div>
+{% endblock %}

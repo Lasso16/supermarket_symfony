@@ -1,0 +1,48 @@
+{# Reusable Product Card Component
+   Parameters expected:
+   - product.image: URL to product image
+   - product.name: Product name
+   - product.rating: Rating value (e.g., 4.5)
+   - product.reviews: Number of reviews
+   - product.oldPrice: Original price (optional)
+   - product.price: Current price
+   - product.discount: Discount percentage (optional)
+#}
+<div class="product-item">
+  <figure>
+    <a href="#" title="{{ product.name|default('Producto') }}">
+      <img src="{{ product.image|default('images/product-thumb-1.png') }}" alt="{{ product.name|default('Producto') }}" class="tab-image">
+    </a>
+  </figure>
+  <div class="d-flex flex-column text-center">
+    <h3 class="fs-6 fw-normal">{{ product.name|default('Producto Orgánico') }}</h3>
+    <div>
+      <span class="rating">
+        {% for i in 1..5 %}
+          {% if i <= (product.rating|default(4)) %}
+            <svg width="18" height="18" class="text-warning"><use xlink:href="#star-full"></use></svg>
+          {% else %}
+            <svg width="18" height="18" class="text-warning"><use xlink:href="#star-half"></use></svg>
+          {% endif %}
+        {% endfor %}
+      </span>
+      <span>({{ product.reviews|default(222) }})</span>
+    </div>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      {% if product.oldPrice is defined %}
+        <del>€{{ product.oldPrice }}</del>
+      {% endif %}
+      <span class="text-dark fw-semibold">€{{ product.price|default('18.00') }}</span>
+      {% if product.discount is defined %}
+        <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">{{ product.discount }}% OFF</span>
+      {% endif %}
+    </div>
+    <div class="button-area p-3 pt-0">
+      <div class="row g-1 mt-2">
+        <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
+        <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><svg width="18" height="18"><use xlink:href="#cart"></use></svg> Añadir</a></div>
+        <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+# CONFIGURACIÓN DE URL BASE
+@baseUrl = http://localhost/proyectoFinal_ERIC_LASSO/sym.final/public
+
+### 1. Registrar Usuario Nuevo
+# Crea un usuario nuevo en la base de datos
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "usuario_prueba_1",
+    "email": "prueba1@example.com",
+    "password": "Password123!"
+}
+
+### 2. Registrar Otro Usuario (Para pruebas futuras)
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "usuario_prueba_2",
+    "email": "prueba2@example.com",
+    "password": "Password123!"
+}
+
+### 3. Intento de registro con datos faltantes (Debe fallar)
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "usuario_incompleto"
+}
+
+### 4. Login (Obtener Token JWT)
+POST {{baseUrl}}/api/v1/auth/login_check
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "usuario_prueba_1",
+    "password": "Password123!"
+}
+
+### 5. Acceso a recurso protegido con Token (Ejemplo)
+# Copia el token obtenido en el paso 4 y ponlo en el Header Authorization
+GET {{baseUrl}}/api/v1/mis-productos
+Authorization: Bearer <TU_TOKEN_AQUI>
+
+### 6. Perfil de Usuario (Obtener datos del usuario logueado)
+GET {{baseUrl}}/api/v1/profile
+Authorization: Bearer <TU_TOKEN_AQUI>
+
+### 7. Cambiar Contraseña
+PATCH {{baseUrl}}/api/v1/profile/password
+Authorization: Bearer <TU_TOKEN_AQUI>
+Content-Type: application/json
+
+{
+  "password": "newpassword123"
+}

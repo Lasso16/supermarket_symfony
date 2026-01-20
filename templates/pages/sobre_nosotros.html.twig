@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sobre Nosotros - Organic{% endblock %}
+
+{% block body %}
+
+{# Hero Section #}
+<section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9f5e9 100%);">
+  <div class="container-lg">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Nuestra Historia</span>
+        <h1 class="display-4 fw-bold mb-4">Somos <span class="text-primary">Organic</span></h1>
+        <p class="lead text-muted mb-4">
+          Desde 2015, nos dedicamos a llevar productos orgánicos de la más alta calidad directamente desde el campo hasta tu hogar. 
+          Creemos en una alimentación sana, sostenible y respetuosa con el medio ambiente.
+        </p>
+        <div class="d-flex gap-4 mb-4">
+          <div class="text-center">
+            <h3 class="text-primary fw-bold mb-0">10+</h3>
+            <small class="text-muted">Años de experiencia</small>
+          </div>
+          <div class="text-center">
+            <h3 class="text-primary fw-bold mb-0">50K+</h3>
+            <small class="text-muted">Clientes satisfechos</small>
+          </div>
+          <div class="text-center">
+            <h3 class="text-primary fw-bold mb-0">100%</h3>
+            <small class="text-muted">Productos orgánicos</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="{{ asset('images/banner-1.jpg') }}" alt="Sobre Nosotros" class="img-fluid rounded-4 shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Mission & Vision #}
+<section class="py-5">
+  <div class="container-lg">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm p-4" style="background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);">
+          <div class="card-body text-white">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-25 mb-3" style="width: 60px; height: 60px;">
+              <svg width="30" height="30" fill="white"><use xlink:href="#organic"></use></svg>
+            </div>
+            <h3 class="fw-bold text-white">Nuestra Misión</h3>
+            <p class="mb-0 opacity-75">
+              Promover un estilo de vida saludable ofreciendo productos 100% orgánicos y naturales, 
+              apoyando a los agricultores locales y cuidando el planeta para las futuras generaciones.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm p-4" style="background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);">
+          <div class="card-body text-white">
+            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-25 mb-3" style="width: 60px; height: 60px;">
+              <svg width="30" height="30" fill="white"><use xlink:href="#fresh"></use></svg>
+            </div>
+            <h3 class="fw-bold text-white">Nuestra Visión</h3>
+            <p class="mb-0 opacity-75">
+              Ser la plataforma líder en España para la compra de productos orgánicos, 
+              conectando directamente a productores con consumidores conscientes de su alimentación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Team Section #}
+<section class="py-5 bg-light">
+  <div class="container-lg">
+    <div class="text-center mb-5">
+      <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Nuestro Equipo</span>
+      <h2 class="display-5 fw-bold">Conoce a las personas detrás de Organic</h2>
+      <p class="text-muted">Un equipo apasionado por la alimentación saludable y el medio ambiente</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100 text-center overflow-hidden">
+          <div class="position-relative">
+            <img src="{{ asset('images/reviewer-1.jpg') }}" alt="María García" class="card-img-top" style="height: 280px; object-fit: cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 py-2" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+              <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg></a>
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg></a>
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-1">Carlos Rodríguez</h5>
+            <p class="text-primary mb-2">Fundador & CEO</p>
+            <p class="text-muted small mb-0">Apasionada por la agricultura ecológica y la alimentación consciente desde hace más de 15 años.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100 text-center overflow-hidden">
+          <div class="position-relative">
+            <img src="{{ asset('images/reviewer-2.jpg') }}" alt="Carlos Rodríguez" class="card-img-top" style="height: 280px; object-fit: cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 py-2" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+              <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg></a>
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg></a>
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-1">María García</h5>
+            <p class="text-primary mb-2">Directora de Operaciones</p>
+            <p class="text-muted small mb-0">Experto en logística y cadena de suministro, garantiza que los productos lleguen frescos a tu puerta.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm h-100 text-center overflow-hidden">
+          <div class="position-relative">
+            <img src="{{ asset('images/reviewer-3.jpg') }}" alt="Laura Martínez" class="card-img-top" style="height: 280px; object-fit: cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 py-2" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+              <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg></a>
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg></a>
+                <a href="#" class="text-white"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-1">Laura Martínez</h5>
+            <p class="text-primary mb-2">Nutricionista Jefe</p>
+            <p class="text-muted small mb-0">Nutricionista certificada que selecciona los mejores productos para tu salud y bienestar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Values Section #}
+<section class="py-5">
+  <div class="container-lg">
+    <div class="text-center mb-5">
+      <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Nuestros Valores</span>
+      <h2 class="display-5 fw-bold">Lo que nos define</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="text-center">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 mb-3" style="width: 80px; height: 80px;">
+            <svg width="40" height="40" class="text-primary"><use xlink:href="#organic"></use></svg>
+          </div>
+          <h5 class="fw-bold">Sostenibilidad</h5>
+          <p class="text-muted small">Cuidamos el planeta con prácticas eco-friendly en todo lo que hacemos.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="text-center">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-10 mb-3" style="width: 80px; height: 80px;">
+            <svg width="40" height="40" class="text-success"><use xlink:href="#quality"></use></svg>
+          </div>
+          <h5 class="fw-bold">Calidad</h5>
+          <p class="text-muted small">Solo ofrecemos productos certificados de la más alta calidad.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="text-center">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-warning bg-opacity-10 mb-3" style="width: 80px; height: 80px;">
+            <svg width="40" height="40" class="text-warning"><use xlink:href="#secure"></use></svg>
+          </div>
+          <h5 class="fw-bold">Transparencia</h5>
+          <p class="text-muted small">Conoce el origen de cada producto que compras.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="text-center">
+          <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-danger bg-opacity-10 mb-3" style="width: 80px; height: 80px;">
+            <svg width="40" height="40" class="text-danger"><use xlink:href="#fresh"></use></svg>
+          </div>
+          <h5 class="fw-bold">Frescura</h5>
+          <p class="text-muted small">Productos siempre frescos, directos del campo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA Section #}
+<section class="py-5 bg-primary text-white">
+  <div class="container-lg text-center">
+    <h2 class="display-5 fw-bold mb-4">¿Listo para empezar a comer sano?</h2>
+    <p class="lead mb-4">Únete a nuestra comunidad de más de 50,000 clientes satisfechos</p>
+    <a href="{{ path('app_register') }}" class="btn btn-light btn-lg px-5 rounded-pill">¡Regístrate Ahora!</a>
+  </div>
+</section>
+
+{% endblock %}

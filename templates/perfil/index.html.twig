@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mi Perfil{% endblock %}
+
+{% block body %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-4">Mi Perfil</h1>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-danger alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+
+        <div class="row">
+            {# User Info #}
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <img src="{{ asset('images/' ~ (usuario.avatar ?? 'default_avatar.png')) }}" 
+                             alt="Avatar" 
+                             class="rounded-circle mb-3" 
+                             style="width: 100px; height: 100px; object-fit: cover;">
+                        <h4>{{ usuario.nombreUsuario }}</h4>
+                        <p class="text-muted">{{ usuario.email }}</p>
+                        <p class="small text-muted">
+                            Miembro desde: {{ usuario.fechaRegistro|date('d/m/Y') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {# Forms #}
+            <div class="col-md-8">
+                {# Avatar Form #}
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Cambiar Avatar</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted small mb-3">
+                            La imagen debe ser JPG o PNG, máximo 10KB. Se redimensionará a 100x100 píxeles.
+                        </p>
+                        {{ form_start(avatarForm, {'attr': {'enctype': 'multipart/form-data'}}) }}
+                        <div class="mb-3">
+                            {{ form_widget(avatarForm.avatar) }}
+                            {{ form_errors(avatarForm.avatar) }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Actualizar Avatar</button>
+                        {{ form_end(avatarForm) }}
+                    </div>
+                </div>
+
+                {# Password Form #}
+                <div class="card shadow-sm">
+                    <div class="card-header bg-warning">
+                        <h5 class="mb-0">Cambiar Contraseña</h5>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(passwordForm) }}
+                        <div class="mb-3">
+                            {{ form_label(passwordForm.currentPassword) }}
+                            {{ form_widget(passwordForm.currentPassword) }}
+                            {{ form_errors(passwordForm.currentPassword) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(passwordForm.newPassword.first) }}
+                            {{ form_widget(passwordForm.newPassword.first) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(passwordForm.newPassword.second) }}
+                            {{ form_widget(passwordForm.newPassword.second) }}
+                            {{ form_errors(passwordForm.newPassword) }}
+                        </div>
+                        <button type="submit" class="btn btn-warning">Cambiar Contraseña</button>
+                        {{ form_end(passwordForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
